@@ -26,4 +26,4 @@ RUN python3 -m ensurepip && \
 COPY ./app /app
 COPY app.conf /usr/supervisord.conf
 
-CMD ["/usr/bin/supervisord","--nodaemon","-c","/usr/supervisord.conf"]
+CMD ["/app/entrypoint.sh"]
