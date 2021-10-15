@@ -9,7 +9,6 @@ import psycopg2
 from psycopg2.extras import RealDictCursor
 from flask_socketio import SocketIO
 
-
 app = Flask(__name__)
 app.logger.setLevel(logging.DEBUG)
 
