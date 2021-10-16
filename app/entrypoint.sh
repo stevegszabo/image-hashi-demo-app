@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROFILE=/app/profile.sh
+PROFILE=/vault/secrets/config
 
 [ -f $PROFILE ] && source $PROFILE
 
