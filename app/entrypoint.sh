@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROFILE=/vault/secrets/config
+PROFILE=/vault/secrets/webapp
 
 [ -f $PROFILE ] && source $PROFILE
 
