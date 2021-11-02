@@ -2,7 +2,7 @@ FROM alpine:latest
 
 LABEL maintainer "Cody De Arkland <cdearkland@vmware.com>"
 LABEL description "Python API tier running flask, gunicorn, and supervisord"
-LABEL release "006"
+LABEL release "007"
 
 COPY requirements.txt /tmp/requirements.txt
 
