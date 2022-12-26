@@ -5,8 +5,8 @@ PROFILE=/vault/secrets/config
 if [ -f $PROFILE ]; then
     source $PROFILE
 else
-    POSTGRES_USER=user
-    POSTGRES_PASSWORD=pass
+    POSTGRES_USER=postgres
+    POSTGRES_PASSWORD=mydbpass
     export POSTGRES_USER POSTGRES_PASSWORD
 fi
 
