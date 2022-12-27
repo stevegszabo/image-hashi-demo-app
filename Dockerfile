@@ -21,6 +21,7 @@ RUN apk add --no-cache \
 
 RUN python3 -m ensurepip && \
     pip3 install --upgrade pip setuptools && \
+    pip3 install https://github.com/eventlet/eventlet/archive/master.zip && \
     pip3 install -r /tmp/requirements.txt
 
 COPY ./app /app
