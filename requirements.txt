@@ -7,3 +7,4 @@ flask-socketio
 uwsgi
 gevent
 gunicorn
+eventlet==0.30.2
