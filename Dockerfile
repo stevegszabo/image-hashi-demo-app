@@ -9,23 +9,23 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y python3 \
     python3-pip \
-    postgresql-client \
     python3-postgresql \
-    libpq-dev \
+    postgresql-client \
+    git \
     gcc \ 
     g++ \
     make \
+    libpq-dev \
     libffi-dev \
     python3-dev \ 
     musl-dev \
-    git \
     linux-generic && \
     apt-get clean
 
 RUN pip3 install --upgrade pip setuptools && \
     pip3 install -r /tmp/requirements.txt
 
-COPY app /app
+COPY app/ /app
 COPY app.conf /usr/supervisord.conf
 
 CMD ["/app/entrypoint.sh"]
