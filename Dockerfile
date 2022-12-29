@@ -5,8 +5,6 @@ LABEL description "Python API tier running flask, gunicorn, and supervisord"
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-COPY requirements.txt /tmp/requirements.txt
-
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y python3 \
@@ -25,10 +23,14 @@ RUN apt-get update && \
     linux-generic && \
     apt-get clean
 
-RUN pip3 install --upgrade pip setuptools && \
-    pip3 install -r /tmp/requirements.txt
-
 COPY app/ /app
 COPY app.conf /usr/supervisord.conf
+COPY requirements.txt /tmp/requirements.txt
 
-CMD ["/app/entrypoint.sh"]
+RUN pip3 install --upgrade pip setuptools && \
+    pip3 install -r /tmp/requirements.txt && \
+    rm -f /tmp/requirements.txt
+
+RUN chown -R www-data:www-data /app
+USER www-data
+ENTRYPOINT ["/app/entrypoint.sh"]
