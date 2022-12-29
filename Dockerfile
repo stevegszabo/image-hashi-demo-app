@@ -20,11 +20,10 @@ RUN apt-get update && \
     linux-generic && \
     apt-get clean
 
-RUN python3 -m ensurepip && \
-    pip3 install --upgrade pip setuptools && \
+RUN pip3 install --upgrade pip setuptools && \
     pip3 install -r /tmp/requirements.txt
 
-COPY ./app /app
+COPY app /app
 COPY app.conf /usr/supervisord.conf
 
 CMD ["/app/entrypoint.sh"]
