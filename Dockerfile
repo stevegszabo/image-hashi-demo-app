@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 LABEL maintainer "Cody De Arkland <cdearkland@vmware.com>"
 LABEL description "Python API tier running flask, gunicorn, and supervisord"
 
-ENV ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 COPY requirements.txt /tmp/requirements.txt
 
