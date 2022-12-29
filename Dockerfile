@@ -1,23 +1,23 @@
-FROM alpine:latest
+FROM ubuntu:latest
 
 LABEL maintainer "Cody De Arkland <cdearkland@vmware.com>"
 LABEL description "Python API tier running flask, gunicorn, and supervisord"
 
 COPY requirements.txt /tmp/requirements.txt
 
-RUN apk add --no-cache \
-    python3=3.7 \
-    bash \
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y python3 \
     postgresql-dev \
     gcc \ 
     g++ \
-    file \
     make \
     libffi-dev \
     python3-dev \ 
     musl-dev \
     git \
-    linux-headers
+    linux-headers && \
+    apt-get clean
 
 RUN python3 -m ensurepip && \
     pip3 install --upgrade pip setuptools && \
