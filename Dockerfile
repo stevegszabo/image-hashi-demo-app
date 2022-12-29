@@ -8,6 +8,7 @@ COPY requirements.txt /tmp/requirements.txt
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y python3 \
+    python3-pip \
     postgresql-client \
     python3-postgresql \
     gcc \ 
