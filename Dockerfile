@@ -23,7 +23,6 @@ RUN apt-get update && \
     apt-get clean
 
 COPY app /app
-COPY app.conf /usr/supervisord.conf
 COPY requirements.txt /tmp/requirements.txt
 
 RUN pip3 install --upgrade pip setuptools && \
