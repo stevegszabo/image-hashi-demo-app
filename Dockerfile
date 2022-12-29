@@ -6,7 +6,7 @@ LABEL description "Python API tier running flask, gunicorn, and supervisord"
 COPY requirements.txt /tmp/requirements.txt
 
 RUN apk add --no-cache \
-    python3 \
+    python3=3.7 \
     bash \
     postgresql-dev \
     gcc \ 

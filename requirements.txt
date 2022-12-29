@@ -6,5 +6,5 @@ flask_cors
 flask-socketio
 uwsgi
 gevent
-eventlet
-gunicorn
+gunicorn==20.1.0
+eventlet==0.30.2
