@@ -14,6 +14,6 @@ fi
 
 find /app -ls
 
-gunicorn --worker-class eventlet --workers 1 app:main --bind 0.0.0.0:5000 --log-level debug --access-logfile - --error-logfile -
+gunicorn --worker-class eventlet --workers 1 app.main:app --bind 0.0.0.0:5000 --log-level debug --access-logfile - --error-logfile -
 
 exit $?

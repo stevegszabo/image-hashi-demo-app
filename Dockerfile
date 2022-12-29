@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 LABEL maintainer "Cody De Arkland <cdearkland@vmware.com>"
-LABEL description "Python API tier running flask, gunicorn, and supervisord"
+LABEL description "Python API tier running flask and gunicorn"
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -11,7 +11,6 @@ RUN apt-get update && \
     python3-pip \
     python3-postgresql \
     postgresql-client \
-    supervisor \
     git \
     gcc \ 
     g++ \
