@@ -11,6 +11,7 @@ RUN apt-get update && \
     python3-pip \
     python3-postgresql \
     postgresql-client \
+    supervisor \
     git \
     gcc \ 
     g++ \
