@@ -11,6 +11,9 @@ else
 fi
 
 ###/usr/bin/supervisord --nodaemon -c /usr/supervisord.conf
-gunicorn --worker-class eventlet -w 1 main:app -b 0.0.0.0:5000 --log-level debug --access-logfile - --error-logfile -
+
+find /app -ls
+
+gunicorn --worker-class eventlet --workers 1 app:main --bind 0.0.0.0:5000 --log-level debug --access-logfile - --error-logfile -
 
 exit $?

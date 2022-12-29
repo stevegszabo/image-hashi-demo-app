@@ -23,7 +23,7 @@ RUN apt-get update && \
     linux-generic && \
     apt-get clean
 
-COPY app/ /app
+COPY app /app
 COPY app.conf /usr/supervisord.conf
 COPY requirements.txt /tmp/requirements.txt
 
