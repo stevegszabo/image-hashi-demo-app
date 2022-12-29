@@ -11,6 +11,7 @@ RUN apt-get update && \
     python3-pip \
     postgresql-client \
     python3-postgresql \
+    libpq-dev \
     gcc \ 
     g++ \
     make \
