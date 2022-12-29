@@ -18,7 +18,6 @@ RUN apt-get update && \
     musl-dev \
     git \
     linux-generic && \
-    linux-headers-generic && \
     apt-get clean
 
 RUN python3 -m ensurepip && \
